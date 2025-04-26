@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -13,44 +14,44 @@ app.get("/", (req, res) => {
   console.log(path.join(__dirname, "../public"));
   const foodData = [
     {
-      name: "Boilded Egg",
+      name: "Boiled Egg",
       price: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "Perfectly boiled eggs, rich in protein and flavor — a healthy start to your day.",
       image: "/images/egg.png",
       type: "breakfast",
     },
     {
-      name: "RAMEN",
+      name: "Ramen",
       price: 25,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "Steaming hot noodles in a savory broth, topped with fresh vegetables and tender meat.",
       image: "/images/ramen.png",
       type: "lunch",
     },
     {
-      name: "GRILLED CHICKEN",
+      name: "Grilled Chicken",
       price: 45,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "Juicy grilled chicken seasoned with herbs and spices, cooked to perfection.",
       image: "/images/chicken.png",
       type: "dinner",
     },
     {
-      name: "CAKE",
+      name: "Cake",
       price: 18,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "Soft and moist cake layered with creamy frosting, a delightful treat for any time.",
       image: "/images/cake.png",
       type: "breakfast",
     },
     {
-      name: "BURGER",
+      name: "Burger",
       price: 23,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "A classic beef burger with fresh lettuce, tomatoes, cheese, and a special sauce.",
       image: "/images/burger.png",
       type: "lunch",
     },
     {
-      name: "PANCAKE",
+      name: "Pancake",
       price: 25,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      text: "Fluffy golden pancakes served with maple syrup and a touch of butter.",
       image: "/images/pancake.png",
       type: "dinner",
     },
