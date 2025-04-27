@@ -31,10 +31,11 @@ function Hero({ searchQuery, selectedCategory }) {
   }, []);
 
   const filteredData = data.filter((item) => {
-    const matchesCategory = selectedCategory === 'All' || item.type === selectedCategory;
+    const matchesCategory = selectedCategory === 'All' || item.type.toLowerCase() === selectedCategory.toLowerCase();
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+  
 
   if (loading) {
     return (
