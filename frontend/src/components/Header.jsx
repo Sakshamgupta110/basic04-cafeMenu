@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import logo from '/logo.png'; // Make sure your logo path is correct!
+import React from 'react';
+import logo from '/logo.png'; 
 import { FiSearch } from 'react-icons/fi';
 
-const Header = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory }) => {
   const categories = ['All', 'Breakfast', 'Lunch', 'Dinner', 'Desserts', 'Beverages'];
 
+  // Handle search query change
   const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-    // TODO: Add your search logic here
+    setSearchQuery(e.target.value); // Update the search query state
+  };
+
+  // Handle category change
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category); // Update the selected category
   };
 
   return (
@@ -26,7 +30,8 @@ const Header = () => {
             onChange={handleSearch}
             className="flex-1 md:w-72 px-4 py-2 rounded-lg border border-[#6B3F3C] bg-[#5A3633] text-white placeholder-[#B8A6A5] focus:outline-none focus:ring-2 focus:ring-[#8B5F5C]"
           />
-          <button className="bg-[#6B3F3C] hover:bg-[#8B5F5C] text-white p-2 rounded-lg transition">
+          <button 
+            className="bg-[#6B3F3C] hover:bg-[#8B5F5C] text-white p-2 rounded-lg transition">
             <FiSearch size={20} />
           </button>
         </div>
@@ -35,7 +40,8 @@ const Header = () => {
         {categories.map((category) => (
           <button
             key={category}
-            className="bg-[#5A3633] hover:bg-[#6B3F3C] text-white px-5 py-2 rounded-full whitespace-nowrap text-sm md:text-base transition"
+            onClick={() => handleCategoryChange(category)} // Trigger category change
+            className={`bg-[#5A3633] hover:bg-[#6B3F3C] text-white px-5 py-2 rounded-full whitespace-nowrap text-sm md:text-base transition ${selectedCategory === category ? 'bg-[#8B5F5C]' : ''}`}
           >
             {category}
           </button>
