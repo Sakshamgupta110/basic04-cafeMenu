@@ -1,6 +1,6 @@
-import express from "express";
-import path from "path";
-import cors from "cors";
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
@@ -30,28 +30,28 @@ app.get("/", (req, res) => {
     {
       name: "Grilled Chicken",
       price: 45,
-      text: "Juicy grilled chicken seasoned with herbs and spices, cooked to perfection.",
+      text: "Juicy grilled chicken seasoned with herbs and spices, grilled to perfection.",
       image: "/images/chicken.png",
       type: "dinner",
     },
     {
       name: "Cake",
       price: 18,
-      text: "Soft and moist cake layered with creamy frosting, a delightful treat for any time.",
+      text: "Soft and moist cake layered with creamy frosting — a delightful treat for any time.",
       image: "/images/cake.png",
       type: "breakfast",
     },
     {
       name: "Burger",
       price: 23,
-      text: "A classic beef burger with fresh lettuce, tomatoes, cheese, and a special sauce.",
+      text: "A classic beef burger with fresh lettuce, tomatoes, melted cheese, and a special sauce.",
       image: "/images/burger.png",
       type: "lunch",
     },
     {
       name: "Pancake",
       price: 25,
-      text: "Fluffy golden pancakes served with maple syrup and a touch of butter.",
+      text: "Fluffy golden pancakes served with maple syrup and a touch of butter — a breakfast favorite.",
       image: "/images/pancake.png",
       type: "dinner",
     },
@@ -62,4 +62,4 @@ app.get("/", (req, res) => {
 
 app.listen(9000, () => {
   console.log("Server is running on port 9000");
-});
+}); 
